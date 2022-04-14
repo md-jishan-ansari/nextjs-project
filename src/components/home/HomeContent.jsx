@@ -44,6 +44,7 @@ const HomeContent = () => {
             <ArrowForwardIcon /> <span>Discover all</span>
           </div>
         </Link>
+        <a href="tel:+41 22 700 37 94">T: +41 22 700 37 94</a>
         <p>Portfolio.</p>
         <div className={classes.thirdDiscription}>
           <h4 className={classes.subHeading}>
@@ -73,7 +74,7 @@ const HomeContent = () => {
           The secret of getting ahead <br />
           is to get started.
         </h4>
-        <Link href="#">
+        <Link href="#" passHref>
           <div className={classes.discoveryLink}>
             <ArrowForwardIcon /> <span>Get In Touch Today</span>
           </div>

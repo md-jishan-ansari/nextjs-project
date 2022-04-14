@@ -6,88 +6,76 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 import classes from './Footer.module.css';
 
+const partners = [
+  {
+    id: 1,
+    image: 'logo.png',
+    discription: ['Quai Gustave-Ador 62', '1207 Geneva', 'Switzerland'],
+    contact: '+41 22 700 37 94',
+  },
+  {
+    id: 2,
+    image: 'logo.png',
+    discription: ['Freigutstrasse 27', '8002 Zurich', 'Switzerland'],
+  },
+  {
+    id: 3,
+    image: 'logo.png',
+    discription: ['17 Rue Eugène Delacroix', '75116 Paris', 'France'],
+    contact: '+33 1 56 07 00 19',
+  },
+  {
+    id: 4,
+    image: 'logo.png',
+    discription: ['7 Bell Yard', 'London WC2A 2JR', 'United Kingdom'],
+    contact: '+44 20 3137 8121',
+  },
+  {
+    id: 5,
+    image: 'logo.png',
+    discription: ['Burj Al Gassar Tower', '26660 Doha', 'Qatar'],
+    contact: '+974 6644 9779',
+  },
+  {
+    id: 6,
+    image: 'logo.png',
+    discription: ['Conrad Tower', 'Office 1903-33', 'Dubai', 'United Arab Emirates'],
+  },
+  {
+    id: 7,
+    image: 'logo.png',
+    discription: ['1A Sportyvna Square', '01023 Kyiv', 'Ukraine'],
+  },
+  {
+    id: 8,
+    image: 'logo.png',
+    discription: ['58 Ibn Charaf Street', '1002 Tunis', 'Tunisia'],
+  },
+];
+
 const Footer = () => {
   return (
     <div className={classes.container}>
       <Grid container rowSpacing={6} sx={{ flexDirection: { lg: 'row', xs: 'column-reverse' } }}>
         <Grid item lg={9}>
           <Grid container rowSpacing={7} columnSpacing={2}>
-            <Grid item lg={3} sm={6} xs={6} className={classes.item}>
-              <div className={classes.itemImage}>
-                <img src="./image/logo.png" alt="logo" />
-              </div>
-              <p className={classes.itemText}>Quai Gustave-Ador 62</p>
-              <p className={classes.itemText}>1207 Geneva</p>
-              <p className={classes.itemText}>Switzerland</p>
-              {/* <Link href="#">T: +41 22 700 37 94</Link> */}
-              <Link href="#">Branding</Link>
-            </Grid>
-            <Grid item lg={3} sm={6} xs={6} className={classes.item}>
-              <div className={classes.itemImage}>
-                <img src="./image/logo.png" alt="logo" />
-              </div>
-              <p className={classes.itemText}>Freigutstrasse 27</p>
-              <p className={classes.itemText}>8002 Zurich</p>
-              <p className={classes.itemText}>Switzerland</p>
-            </Grid>
-            <Grid item lg={3} sm={6} xs={6} className={classes.item}>
-              <div className={classes.itemImage}>
-                <img src="./image/logo.png" alt="logo" />
-              </div>
-              <p className={classes.itemText}>17 Rue Eugène Delacroix</p>
-              <p className={classes.itemText}>75116 Paris</p>
-              <p className={classes.itemText}>France</p>
-              <a href="tel:+33 1 56 07 00 19" className={classes.itemText}>
-                T: +33 1 56 07 00 19
-              </a>
-            </Grid>
-            <Grid item lg={3} sm={6} xs={6} className={classes.item}>
-              <div className={classes.itemImage}>
-                <img src="./image/logo.png" alt="logo" />
-              </div>
-              <p className={classes.itemText}>7 Bell Yard</p>
-              <p className={classes.itemText}>London WC2A 2JR</p>
-              <p className={classes.itemText}>United Kingdom</p>
-              <a href="tel:+44 20 3137 8121" className={classes.itemText}>
-                T: +44 20 3137 8121
-              </a>
-            </Grid>
-            <Grid item lg={3} sm={6} xs={6} className={classes.item}>
-              <div className={classes.itemImage}>
-                <img src="./image/logo.png" alt="logo" />
-              </div>
-              <p className={classes.itemText}>Burj Al Gassar Tower</p>
-              <p className={classes.itemText}>26660 Doha</p>
-              <p className={classes.itemText}>Qatar</p>
-              <a href="tel:+974 6644 9779" className={classes.itemText}>
-                T: +974 6644 9779
-              </a>
-            </Grid>
-            <Grid item lg={3} sm={6} xs={6} className={classes.item}>
-              <div className={classes.itemImage}>
-                <img src="./image/logo.png" alt="logo" />
-              </div>
-              <p className={classes.itemText}>Conrad Tower</p>
-              <p className={classes.itemText}>Office 1903-33</p>
-              <p className={classes.itemText}>Dubai</p>
-              <p className={classes.itemText}>United Arab Emirates</p>
-            </Grid>
-            <Grid item lg={3} sm={6} xs={6} className={classes.item}>
-              <div className={classes.itemImage}>
-                <img src="./image/logo.png" alt="logo" />
-              </div>
-              <p className={classes.itemText}>1A Sportyvna Square</p>
-              <p className={classes.itemText}>01023 Kyiv</p>
-              <p className={classes.itemText}>Ukraine</p>
-            </Grid>
-            <Grid item lg={3} sm={6} xs={6} className={classes.item}>
-              <div className={classes.itemImage}>
-                <img src="./image/logo.png" alt="logo" />
-              </div>
-              <p className={classes.itemText}>58 Ibn Charaf Street</p>
-              <p className={classes.itemText}>1002 Tunis</p>
-              <p className={classes.itemText}>Tunisia</p>
-            </Grid>
+            {partners.map((partner) => (
+              <Grid key={partner.id} item lg={3} sm={6} xs={6} className={classes.item}>
+                <div className={classes.itemImage}>
+                  <img src={`./image/${partner.image}`} alt="logo" />
+                </div>
+                {partner.discription.map((disc) => (
+                  <p key={disc} className={classes.itemText}>
+                    {disc}
+                  </p>
+                ))}
+                {partner?.contact && (
+                  <a href={`tel:${partner.contact}`} className={classes.itemText}>
+                    {`T: ${partner.contact}`}
+                  </a>
+                )}
+              </Grid>
+            ))}
           </Grid>
         </Grid>
         <Grid item lg={3} sm={12}>
