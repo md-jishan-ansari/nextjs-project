@@ -192,6 +192,10 @@
     padding-right: 50px;
   }
 
+  .topHeading {
+    font-size: 44px;
+  }
+
   /* ********* */
   .contentContainer {
     padding-left: 40px;
@@ -211,5 +215,37 @@
   .contentContainerBottom {
     padding-left: 40px;
     padding-right: 40px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .topContainer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  /* ********* */
+  .contentContainer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  /* .secondDiscription {
+    font-size: 32px;
+  } */
+
+  /* ********* */
+
+  /* .subHeading {
+    font-size: 32px;
+  } */
+
+  .dash {
+    margin: 10px;
+  }
+
+  .contentContainerBottom {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
