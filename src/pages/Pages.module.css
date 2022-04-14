@@ -1,0 +1,71 @@
+.subContainer {
+  width: 500px;
+  height: 200px;
+  background-color: rgb(84, 84, 239);
+  margin: 50px auto;
+}
+
+.subContainer_second {
+  width: 500px;
+  height: 200px;
+  background-color: rgb(235, 95, 95);
+  margin: 50px auto;
+}
+
+.clickedDiv {
+  margin: 100px 0 100px 50px;
+  /* width: 100px;
+  height: 100px; */
+  border-radius: 50px;
+  background-color: rgb(86, 32, 32);
+}
+
+.staggerContainer {
+  text-align: center;
+}
+
+.staggerContainer > * {
+  width: 400px;
+  height: 200px;
+  margin: 20px auto;
+  background-color: blue;
+}
+
+.beforeChildrenContainer {
+  display: flex;
+  flex-direction: row;
+  background-color: black;
+  margin: 30px auto;
+  width: 50px;
+  height: 50px;
+}
+
+.beforeChildrenContainer > * {
+  width: 45vw;
+  height: 45vh;
+  background-color: red;
+  margin: 20px;
+}
+
+.dragContainer {
+  width: 100vw;
+  height: 100vh;
+}
+
+.dragBox {
+  background: white;
+  border-radius: 30px;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: calc(50% - 150px / 2);
+  left: calc(50% - 150px / 2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progressIcon {
+  width: 80%;
+  height: 80%;
+}

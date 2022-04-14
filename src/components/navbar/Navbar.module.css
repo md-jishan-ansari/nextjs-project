@@ -1,0 +1,31 @@
+.navbarItem {
+  margin: 0 10px 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.menuIcon {
+  margin-left: auto !important;
+}
+
+.logo {
+  margin-left: 30px !important;
+  /* width: 100px;
+  height: 100px; */
+  cursor: pointer;
+  /* margin: 0;
+  padding: 0; */
+}
+
+.logoImage {
+  width: 100%;
+}
+
+.btn {
+  color: #fff !important;
+  font-size: 18px !important;
+  font-family: Montserrat, sans-serif !important;
+  margin: 0 25px !important;
+  padding: 5px 15px !important;
+  text-transform: capitalize !important;
+}
