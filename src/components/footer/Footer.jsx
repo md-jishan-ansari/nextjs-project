@@ -108,33 +108,41 @@ const Footer = () => {
                 variants={fadeIn(showFooter, 0.2, 10)}
                 initial="initial"
                 animate="animate"
-                className={classes.itemText}
+                className={`hover-underline-animation underline-black underline-thin ${classes.itemText}`}
               >
-                <Link href="#">Careers</Link>
+                <Link href="#" scroll={false}>
+                  Careers
+                </Link>
               </motion.div>
               <motion.div
                 variants={fadeIn(showFooter, 0.2, 10)}
                 initial="initial"
                 animate="animate"
-                className={classes.itemText}
+                className={`hover-underline-animation underline-black underline-thin ${classes.itemText}`}
               >
-                <Link href="#">Terms of use</Link>
+                <Link href="#" scroll={false}>
+                  Terms of use
+                </Link>
               </motion.div>
               <motion.div
                 variants={fadeIn(showFooter, 0.2, 10)}
                 initial="initial"
                 animate="animate"
-                className={classes.itemText}
+                className={`hover-underline-animation underline-black underline-thin ${classes.itemText}`}
               >
-                <Link href="#">Privacy Policy</Link>
+                <Link href="#" scroll={false}>
+                  Privacy Policy
+                </Link>
               </motion.div>
               <motion.div
                 variants={fadeIn(showFooter, 0.2, 10)}
                 initial="initial"
                 animate="animate"
-                className={classes.itemText}
+                className={`hover-underline-animation underline-black underline-thin ${classes.itemText}`}
               >
-                <Link href="#">Copyright & TM</Link>
+                <Link href="#" scroll={false}>
+                  Copyright & TM
+                </Link>
               </motion.div>
             </Grid>
             <Grid item lg={6} sm={4} xs={6} sx={{ paddingTop: '40px' }}>
@@ -154,33 +162,41 @@ const Footer = () => {
                 variants={fadeIn(showFooter, 0.2, 10)}
                 initial="initial"
                 animate="animate"
-                className={classes.itemText}
+                className={`hover-underline-animation underline-black underline-thin ${classes.itemText}`}
               >
-                <Link href="#">Facebook</Link>
+                <Link href="#" scroll={false}>
+                  Facebook
+                </Link>
               </motion.div>
               <motion.div
                 variants={fadeIn(showFooter, 0.2, 10)}
                 initial="initial"
                 animate="animate"
-                className={classes.itemText}
+                className={`hover-underline-animation underline-black underline-thin ${classes.itemText}`}
               >
-                <Link href="#">LinkedIn</Link>
+                <Link href="#" scroll={false}>
+                  LinkedIn
+                </Link>
               </motion.div>
               <motion.div
                 variants={fadeIn(showFooter, 0.2, 10)}
                 initial="initial"
                 animate="animate"
-                className={classes.itemText}
+                className={`hover-underline-animation underline-black underline-thin ${classes.itemText}`}
               >
-                <Link href="#">Instagram</Link>
+                <Link href="#" scroll={false}>
+                  Instagram
+                </Link>
               </motion.div>
               <motion.div
                 variants={fadeIn(showFooter, 0.2, 10)}
                 initial="initial"
                 animate="animate"
-                className={classes.itemText}
+                className={`hover-underline-animation underline-black underline-thin ${classes.itemText}`}
               >
-                <Link href="#">awwwards.com</Link>
+                <Link href="#" scroll={false}>
+                  awwwards.com
+                </Link>
               </motion.div>
             </Grid>
           </Grid>

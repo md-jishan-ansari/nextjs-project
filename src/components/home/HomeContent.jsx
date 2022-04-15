@@ -1,4 +1,4 @@
-import classes from './Home.module.css';
+import classes from '../component.module.css';
 
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
@@ -43,7 +43,7 @@ const HomeContent = () => {
             variants={fadeIn(firstDescInView, 0.3, 3)}
             initial="initial"
             animate="animate"
-            className={classes.contentDiscription}
+            className="aboutDiscription"
           >
             EWM. is a Swiss-born, Branding, Webdesign & Development, and Digital Marketing agency
             designed to efficiently support world-leading brands, SMEs, NGOs, and more. <br />
@@ -62,13 +62,13 @@ const HomeContent = () => {
             variants={moreLinkAnimation()}
             whileHover="whileHover"
             whileTap="whileTap"
-            className={classes.discoveryLink}
+            className="discoveryLink"
           >
             <ArrowForwardIcon /> <span>Explore more</span>
           </motion.div>
         </Link>
         <p>Services.</p>
-        <p ref={workHeadingRef} className={classes.secondDiscription}>
+        <p ref={workHeadingRef} className="serviceDiscription">
           <motion.sapn
             variants={fadeIn(workHeadingInView, 0.05, 5)}
             initial="initial"
@@ -78,7 +78,7 @@ const HomeContent = () => {
               <a className="hover-underline-animation"> Branding</a>
             </Link>
           </motion.sapn>{' '}
-          <hr className={classes.dash} />{' '}
+          <hr className="dash" />{' '}
           <motion.sapn
             variants={fadeIn(workHeadingInView, 0.1, 5)}
             initial="initial"
@@ -88,7 +88,7 @@ const HomeContent = () => {
               <a className="hover-underline-animation">Design</a>
             </Link>
           </motion.sapn>{' '}
-          <hr className={classes.dash} />
+          <hr className="dash" />
           <motion.sapn
             variants={fadeIn(workHeadingInView, 0.15, 5)}
             initial="initial"
@@ -98,7 +98,7 @@ const HomeContent = () => {
               <a className="hover-underline-animation">Web & Mobile Development</a>
             </Link>
           </motion.sapn>{' '}
-          <hr className={classes.dash} />{' '}
+          <hr className="dash" />{' '}
           <motion.sapn
             variants={fadeIn(workHeadingInView, 0.2, 5)}
             initial="initial"
@@ -108,26 +108,26 @@ const HomeContent = () => {
               <a className="hover-underline-animation">Digital Marketing</a>
             </Link>{' '}
           </motion.sapn>
-          <hr className={classes.dash} />
+          <hr className="dash" />
         </p>
         <Link href="#" scroll={false}>
           <motion.div
             variants={moreLinkAnimation()}
             whileHover="whileHover"
             whileTap="whileTap"
-            className={classes.discoveryLink}
+            className="discoveryLink"
           >
             <ArrowForwardIcon /> <span>Discover all</span>
           </motion.div>
         </Link>
         <p>Portfolio.</p>
-        <div className={classes.thirdDiscription}>
+        <div>
           <div ref={LamborgRef}>
             <motion.h4
               variants={fadeIn(LamborgInView, 0.1, 25)}
               initial="initial"
               animate="animate"
-              className={classes.subHeading}
+              className="workHeading"
             >
               <Link href="#" scroll={false}>
                 <a className="hover-underline-animation">Lamborghini</a>
@@ -139,7 +139,7 @@ const HomeContent = () => {
               variants={fadeIn(ITCInView, 0.2, 25)}
               initial="initial"
               animate="animate"
-              className={classes.subHeading}
+              className="workHeading"
             >
               <Link href="#" scroll={false}>
                 <a className="hover-underline-animation">ITC | United Nations</a>
@@ -151,7 +151,7 @@ const HomeContent = () => {
               variants={fadeIn(UltimaInView, 0.3, 25)}
               initial="initial"
               animate="animate"
-              className={classes.subHeading}
+              className="workHeading"
             >
               <Link href="#" scroll={false}>
                 <a className="hover-underline-animation">Ultima Collection</a>
@@ -163,7 +163,7 @@ const HomeContent = () => {
               variants={fadeIn(RéserveInView, 0.4, 25)}
               initial="initial"
               animate="animate"
-              className={classes.subHeading}
+              className="workHeading"
             >
               <Link href="#" scroll={false}>
                 <a className="hover-underline-animation">La Réserve Geneva</a>
@@ -175,7 +175,7 @@ const HomeContent = () => {
               variants={fadeIn(HotelInView, 0.5, 25)}
               initial="initial"
               animate="animate"
-              className={classes.subHeading}
+              className="workHeading"
             >
               <Link href="#" scroll={false}>
                 <a className="hover-underline-animation">Hotel Spider</a>
@@ -188,7 +188,7 @@ const HomeContent = () => {
             variants={moreLinkAnimation()}
             whileHover="whileHover"
             whileTap="whileTap"
-            className={classes.discoveryLink}
+            className="discoveryLink"
           >
             <ArrowForwardIcon /> <span>Discover more</span>
           </motion.div>
@@ -212,7 +212,7 @@ const HomeContent = () => {
             whileTap="whileTap"
             initial="initial"
             animate="animate"
-            className={classes.discoveryLink}
+            className="discoveryLink"
           >
             <ArrowForwardIcon /> <span>Get In Touch Today</span>
           </motion.div>

@@ -102,7 +102,9 @@ const Blog = () => {
       <Grid container className={classes.topContainer} style={{ paddingBottom: 15 }}>
         <Grid item lg={9} sm={6} xs={12}>
           <p>Stay Tuned.</p>
-          <h4 className={classes.subHeading}>Blog</h4>
+          <h4 className="workHeading" style={{ fontSize: '104px' }}>
+            Blog
+          </h4>
         </Grid>
         <Grid item lg={3} sm={6} xs={12}>
           <Link href="#" scroll={false}>
@@ -110,7 +112,7 @@ const Blog = () => {
               variants={moreLinkAnimation()}
               whileHover="whileHover"
               whileTap="whileTap"
-              className={`${classes.discoveryLink} ${classes.blogLink}`}
+              className={`discoveryLink ${classes.blogLink}`}
             >
               <ArrowForwardIcon /> <span>Explore more</span>
             </motion.div>

@@ -10,7 +10,7 @@ const Top = () => {
 
   return (
     <div ref={ref} className={classes.topContainer}>
-      <h2 className={classes.topHeading}>
+      <h2 className="firstHeading">
         Your Partner in
         <br />
         Digital Innovation
