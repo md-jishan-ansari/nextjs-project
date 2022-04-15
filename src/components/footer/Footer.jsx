@@ -1,6 +1,13 @@
+import { useContext } from 'react';
+import AppContext from '../../AppContext';
+
 import { Grid } from '@mui/material';
 
 import Link from 'next/link';
+
+import { motion } from 'framer-motion';
+
+import { fadeIn } from '../variants.jsx';
 
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
@@ -54,6 +61,10 @@ const partners = [
 ];
 
 const Footer = () => {
+  const { showFooter, setShowFooter } = useContext(AppContext);
+
+  console.log(showFooter);
+
   return (
     <div className={classes.container}>
       <Grid container rowSpacing={6} sx={{ flexDirection: { lg: 'row', xs: 'column-reverse' } }}>
@@ -65,14 +76,26 @@ const Footer = () => {
                   <img src={`./image/${partner.image}`} alt="logo" />
                 </div>
                 {partner.discription.map((disc) => (
-                  <p key={disc} className={classes.itemText}>
+                  <motion.p
+                    variants={fadeIn(showFooter, 0.2, 10)}
+                    initial="initial"
+                    animate="animate"
+                    key={disc}
+                    className={classes.itemText}
+                  >
                     {disc}
-                  </p>
+                  </motion.p>
                 ))}
                 {partner?.contact && (
-                  <a href={`tel:${partner.contact}`} className={classes.itemText}>
+                  <motion.a
+                    variants={fadeIn(showFooter, 0.2, 10)}
+                    initial="initial"
+                    animate="animate"
+                    href={`tel:${partner.contact}`}
+                    className={classes.itemText}
+                  >
                     {`T: ${partner.contact}`}
-                  </a>
+                  </motion.a>
                 )}
               </Grid>
             ))}
@@ -81,38 +104,84 @@ const Footer = () => {
         <Grid item lg={3} sm={12}>
           <Grid container columnSpacing={2}>
             <Grid item lg={6} sm={4} xs={6} sx={{ height: { lg: 210 }, paddingTop: '15px' }}>
-              <div className={classes.itemText}>
+              <motion.div
+                variants={fadeIn(showFooter, 0.2, 10)}
+                initial="initial"
+                animate="animate"
+                className={classes.itemText}
+              >
                 <Link href="#">Careers</Link>
-              </div>
-              <div className={classes.itemText}>
+              </motion.div>
+              <motion.div
+                variants={fadeIn(showFooter, 0.2, 10)}
+                initial="initial"
+                animate="animate"
+                className={classes.itemText}
+              >
                 <Link href="#">Terms of use</Link>
-              </div>
-              <div className={classes.itemText}>
+              </motion.div>
+              <motion.div
+                variants={fadeIn(showFooter, 0.2, 10)}
+                initial="initial"
+                animate="animate"
+                className={classes.itemText}
+              >
                 <Link href="#">Privacy Policy</Link>
-              </div>
-              <div className={classes.itemText}>
+              </motion.div>
+              <motion.div
+                variants={fadeIn(showFooter, 0.2, 10)}
+                initial="initial"
+                animate="animate"
+                className={classes.itemText}
+              >
                 <Link href="#">Copyright & TM</Link>
-              </div>
+              </motion.div>
             </Grid>
             <Grid item lg={6} sm={4} xs={6} sx={{ paddingTop: '40px' }}>
               <img src="./image/logo.png" width="60px" />
             </Grid>
             <Grid item lg={6} sm={4} xs={6} sx={{ paddingTop: '15px' }}>
-              <p className={classes.itemText} style={{ fontSize: 14 }}>
+              <motion.p
+                variants={fadeIn(showFooter, 0.2, 10)}
+                initial="initial"
+                animate="animate"
+                className={classes.itemText}
+                style={{ fontSize: 14 }}
+              >
                 Social.
-              </p>
-              <div className={classes.itemText}>
+              </motion.p>
+              <motion.div
+                variants={fadeIn(showFooter, 0.2, 10)}
+                initial="initial"
+                animate="animate"
+                className={classes.itemText}
+              >
                 <Link href="#">Facebook</Link>
-              </div>
-              <div className={classes.itemText}>
+              </motion.div>
+              <motion.div
+                variants={fadeIn(showFooter, 0.2, 10)}
+                initial="initial"
+                animate="animate"
+                className={classes.itemText}
+              >
                 <Link href="#">LinkedIn</Link>
-              </div>
-              <div className={classes.itemText}>
+              </motion.div>
+              <motion.div
+                variants={fadeIn(showFooter, 0.2, 10)}
+                initial="initial"
+                animate="animate"
+                className={classes.itemText}
+              >
                 <Link href="#">Instagram</Link>
-              </div>
-              <div className={classes.itemText}>
+              </motion.div>
+              <motion.div
+                variants={fadeIn(showFooter, 0.2, 10)}
+                initial="initial"
+                animate="animate"
+                className={classes.itemText}
+              >
                 <Link href="#">awwwards.com</Link>
-              </div>
+              </motion.div>
             </Grid>
           </Grid>
         </Grid>

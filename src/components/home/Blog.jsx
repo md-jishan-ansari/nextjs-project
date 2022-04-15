@@ -1,7 +1,14 @@
+import { useContext, useEffect } from 'react';
+import AppContext from '../../AppContext';
+
+import { useInView } from 'react-intersection-observer';
+
+import { motion } from 'framer-motion';
+import { moreLinkAnimation } from '../variants.jsx';
+
 import classes from './Home.module.css';
 
 import Link from 'next/link';
-
 import { Grid } from '@mui/material';
 
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
@@ -38,71 +45,108 @@ const blogs = [
     creater: 'by Ramzi Chamat',
     discription: 'Why Conversion is Important for Luxury Hotels and how to Improve Yours',
   },
+  {
+    id: 5,
+    image: '011.jpg',
+    data: 'April 13,2022',
+    creater: 'by Ramzi Chamat',
+    discription: 'Why Conversion is Important for Luxury Hotels and how to Improve Yours',
+  },
+  {
+    id: 6,
+    image: '011.jpg',
+    data: 'April 13,2022',
+    creater: 'by Ramzi Chamat',
+    discription: 'Why Conversion is Important for Luxury Hotels and how to Improve Yours',
+  },
+  {
+    id: 7,
+    image: '011.jpg',
+    data: 'April 13,2022',
+    creater: 'by Ramzi Chamat',
+    discription: 'Why Conversion is Important for Luxury Hotels and how to Improve Yours',
+  },
 ];
 
 const responsive = {
+  superLargeDesktop: {
+    // the naming can be any, depends on you.
+    breakpoint: { max: 4000, min: 1200 },
+    items: 4,
+  },
   desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 2.5,
+    breakpoint: { max: 1201, min: 800 },
+    items: 3,
   },
   tablet: {
-    breakpoint: { max: 1024, min: 464 },
+    breakpoint: { max: 801, min: 500 },
     items: 2,
   },
   mobile: {
-    breakpoint: { max: 464, min: 0 },
+    breakpoint: { max: 501, min: 0 },
     items: 1,
   },
 };
 
 const Blog = () => {
+  const { ref, inView } = useInView({ threshold: 0.4 });
+
+  const { showFooter, setShowFooter } = useContext(AppContext);
+
+  useEffect(() => {
+    setShowFooter(!inView);
+  }, [inView]);
+
   return (
-    <div className={classes.topContainer} style={{ paddingRight: 0 }}>
-      <Grid container>
-        <Grid item lg={9}>
+    <div ref={ref} className={classes.blogContainer} style={{ paddingRight: 0 }}>
+      <Grid container className={classes.topContainer} style={{ paddingBottom: 15 }}>
+        <Grid item lg={9} sm={6} xs={12}>
           <p>Stay Tuned.</p>
           <h4 className={classes.subHeading}>Blog</h4>
         </Grid>
-        <Grid item lg={3}>
-          <Link href="#">
-            <div className={`${classes.discoveryLink} ${classes.blogLink}`}>
+        <Grid item lg={3} sm={6} xs={12}>
+          <Link href="#" scroll={false}>
+            <motion.div
+              variants={moreLinkAnimation()}
+              whileHover="whileHover"
+              whileTap="whileTap"
+              className={`${classes.discoveryLink} ${classes.blogLink}`}
+            >
               <ArrowForwardIcon /> <span>Explore more</span>
-            </div>
+            </motion.div>
           </Link>
         </Grid>
       </Grid>
       <Carousel
         responsive={responsive}
-        // infinite={true}
-        infinite={false}
-        // draggable={false}
         draggable={true}
-        // swapable={false}
         swapable={true}
-        // centerMode={true}
         centerMode={false}
-        autoPlay={true}
-        autoPlaySpeed={10000}
-        keyBoardControl={true}
-        showDots={false}
-        removeArrowOnDeviceType={['tablet', 'mobile']}
+        // removeArrowOnDeviceType={['mobile']}
         containerClass="carousel-container"
         dotListClass="custom-dot-list-style"
         itemClass="carousel-item-padding-40-px"
       >
         {blogs?.map((blog) => (
-          <Grid container key={blog.id} className={classes.blogContainer}>
-            <Grid item className={classes.blogImage}>
-              <img src={`./image/${blog.image}`} alt="logo" />
-            </Grid>
-            <Grid item>
-              <p>April 13,2022</p>
-              <p>by Ramzi Chamat</p>
-            </Grid>
-            <Grid item>
-              <p>Why Conversion is Important for Luxury Hotels and how to Improve Yours</p>
-            </Grid>
-          </Grid>
+          <Link href="#" key={blog.id} scroll={false}>
+            <a>
+              <div className={classes.blogSubContainer}>
+                <div className={classes.blogImage}>
+                  <img src={`./image/${blog.image}`} alt="logo" />
+                </div>
+
+                <p style={{ lineHeight: 1.5 }}>
+                  April 13,2022
+                  <br />
+                  by Ramzi Chamat
+                </p>
+
+                <p style={{ fontSize: 24 }}>
+                  Why Conversion is Important for Luxury Hotels and how to Improve Yours
+                </p>
+              </div>
+            </a>
+          </Link>
         ))}
       </Carousel>
     </div>

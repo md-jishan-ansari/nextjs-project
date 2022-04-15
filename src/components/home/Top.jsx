@@ -1,16 +1,28 @@
 import classes from './Home.module.css';
 
+import { useInView } from 'react-intersection-observer';
+import { motion } from 'framer-motion';
+
+import { fadeIn } from '../variants.jsx';
+
 const Top = () => {
+  const { ref, inView } = useInView();
+
   return (
-    <div className={classes.topContainer}>
+    <div ref={ref} className={classes.topContainer}>
       <h2 className={classes.topHeading}>
         Your Partner in
         <br />
         Digital Innovation
       </h2>
-      <p className={classes.topDiscription}>
+      <motion.p
+        variants={fadeIn(inView, 0.4, 5)}
+        initial="initial"
+        animate="animate"
+        className={classes.topDiscription}
+      >
         Branding - Web Design - Web Development - Digital Marketing
-      </p>
+      </motion.p>
       <div className={classes.topLogo}>
         <img src="./image/logoWhite.png" />
       </div>
