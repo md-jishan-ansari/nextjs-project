@@ -43,7 +43,7 @@ export const fadeIn = (inView = true, wait = 0, h = 0) => {
       scale: 1.03,
       transition: {
         type: 'tween',
-        duration: 0.2,
+        duration: 0.1,
       },
     },
   };

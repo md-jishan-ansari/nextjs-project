@@ -10,6 +10,7 @@ function MyApp({ Component, pageProps }) {
   const [showing, setShowing] = useState(false);
 
   const [showFooter, setShowFooter] = useState(false);
+  const [showBottom, setShowBottom] = useState(false);
 
   useEffect(() => {
     setShowing(true);
@@ -25,7 +26,9 @@ function MyApp({ Component, pageProps }) {
 
     return <AppContext.Provider value={{
       showFooter,
-      setShowFooter
+      setShowFooter,
+      showBottom,
+      setShowBottom
     }}>
       <Wrapper><Component {...pageProps} /></Wrapper>
     </AppContext.Provider>

@@ -60,6 +60,14 @@ a {
   color: black !important;
 } */
 
+.topContainer {
+  position: relative;
+  z-index: 100;
+  background-color: #040c26;
+  color: #fff;
+  padding: 250px 170px 130px;
+}
+
 /* .topHeading { */
 .firstHeading {
   font-size: 112px;

@@ -1,0 +1,21 @@
+.agenceContainer {
+  /* padding: 420px 170px 200px !important; */
+  padding-bottom: 200px;
+}
+
+.agenceDiscription {
+  font-size: 40px;
+  max-width: 800px;
+  font-weight: 300 !important;
+}
+
+.agenceHeading {
+  margin-top: 170px;
+  margin-bottom: 200px;
+}
+
+@media only screen and (max-width: 768px) {
+  .agenceDiscription {
+    font-size: 26px;
+  }
+}

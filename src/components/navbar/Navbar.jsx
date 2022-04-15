@@ -12,6 +12,8 @@ import {
   MenuItem,
 } from '@mui/material';
 
+import Link from 'next/link';
+
 import MenuIcon from '@mui/icons-material/Menu';
 
 import Footer from '../footer/Footer.jsx';
@@ -43,10 +45,18 @@ const Navbar = (props) => {
         <Toolbar disableGutters style={{ height: 100 }}>
           <Box className={classes.logo}>EW</Box>
           <Box className={classes.navbarItem} sx={{ display: { xs: 'none', sm: 'flex' } }}>
-            <Button className={classes.btn}>Agence</Button>
-            <Button className={classes.btn}>Services</Button>
-            <Button className={classes.btn}>Portfolio</Button>
-            <Button className={classes.btn}>Contact</Button>
+            <Link href="./agence" passHref>
+              <Button className={classes.btn}>Agence</Button>
+            </Link>
+            <Link href="#" passHref>
+              <Button className={classes.btn}>Services</Button>
+            </Link>
+            <Link href="#" passHref>
+              <Button className={classes.btn}>Portfolio</Button>
+            </Link>
+            <Link href="#" passHref>
+              <Button className={classes.btn}>Contact</Button>
+            </Link>
           </Box>
 
           <Box className={classes.menuIcon} sx={{ display: { xs: 'flex', sm: 'none' } }}>

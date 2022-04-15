@@ -9,7 +9,7 @@ const Top = () => {
   const { ref, inView } = useInView();
 
   return (
-    <div ref={ref} className={classes.topContainer}>
+    <div ref={ref} className="topContainer">
       <h2 className="firstHeading">
         Your Partner in
         <br />

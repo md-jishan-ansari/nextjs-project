@@ -99,7 +99,7 @@ const Blog = () => {
 
   return (
     <div ref={ref} className={classes.blogContainer} style={{ paddingRight: 0 }}>
-      <Grid container className={classes.topContainer} style={{ paddingBottom: 15 }}>
+      <Grid container className="topContainer" style={{ paddingBottom: 15 }}>
         <Grid item lg={9} sm={6} xs={12}>
           <p>Stay Tuned.</p>
           <h4 className="workHeading" style={{ fontSize: '104px' }}>
