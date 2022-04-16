@@ -16,11 +16,9 @@ import Link from 'next/link';
 
 import MenuIcon from '@mui/icons-material/Menu';
 
-import Footer from '../footer/Footer.jsx';
-
 import classes from './Navbar.module.css';
 
-const Navbar = (props) => {
+const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -32,30 +30,30 @@ const Navbar = (props) => {
   };
 
   return (
-    <AppBar
-      //   color={isScroll ? 'inherit' : 'transparent'}
-      color="transparent"
-      elevation={1}
-      // style={{
-      //     //   boxShadow: !isScroll && 'none',
-      // boxShadow: 'none',
-      // }}
-    >
+    <AppBar color="transparent" elevation={1}>
       <Container maxWidth="xl">
         <Toolbar disableGutters style={{ height: 100 }}>
           <Box className={classes.logo}>EW</Box>
           <Box className={classes.navbarItem} sx={{ display: { xs: 'none', sm: 'flex' } }}>
             <Link href="./agence" passHref>
-              <Button className={classes.btn}>Agence</Button>
+              <Button className={classes.btn}>
+                <span className="hover-underline-animation underline-thin">Agence</span>
+              </Button>
             </Link>
-            <Link href="#" passHref>
-              <Button className={classes.btn}>Services</Button>
+            <Link href="./services" passHref>
+              <Button className={classes.btn}>
+                <span className="hover-underline-animation underline-thin">Services</span>
+              </Button>
             </Link>
-            <Link href="#" passHref>
-              <Button className={classes.btn}>Portfolio</Button>
+            <Link href="./work" passHref>
+              <Button className={classes.btn}>
+                <span className="hover-underline-animation underline-thin">Work</span>
+              </Button>
             </Link>
-            <Link href="#" passHref>
-              <Button className={classes.btn}>Contact</Button>
+            <Link href="./contact" passHref>
+              <Button className={classes.btn}>
+                <span className="hover-underline-animation underline-thin">Contact</span>
+              </Button>
             </Link>
           </Box>
 
@@ -79,26 +77,37 @@ const Navbar = (props) => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              <MenuItem onClick={handleCloseNavMenu}>
-                <Typography textAlign="center" style={{ color: '#555555' }}>
-                  Agence
-                </Typography>
-              </MenuItem>
-              <MenuItem onClick={handleCloseNavMenu}>
-                <Typography textAlign="center" style={{ color: '#555555' }}>
-                  Services
-                </Typography>
-              </MenuItem>
-              <MenuItem onClick={handleCloseNavMenu}>
-                <Typography textAlign="center" style={{ color: '#555555' }}>
-                  Portfolio
-                </Typography>
-              </MenuItem>
-              <MenuItem onClick={handleCloseNavMenu}>
-                <Typography textAlign="center" style={{ color: '#555555' }}>
-                  Contact
-                </Typography>
-              </MenuItem>
+              <Link href="./agence" passHref scroll={false}>
+                <MenuItem onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center" style={{ color: '#555555' }}>
+                    Agence
+                  </Typography>
+                </MenuItem>
+              </Link>
+
+              <Link href="./services" passHref scroll={false}>
+                <MenuItem onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center" style={{ color: '#555555' }}>
+                    Services
+                  </Typography>
+                </MenuItem>
+              </Link>
+
+              <Link href="./work" passHref scroll={false}>
+                <MenuItem onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center" style={{ color: '#555555' }}>
+                    Work
+                  </Typography>
+                </MenuItem>
+              </Link>
+
+              <Link href="./work" passHref scroll={false}>
+                <MenuItem onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center" style={{ color: '#555555' }}>
+                    Contact
+                  </Typography>
+                </MenuItem>
+              </Link>
             </Menu>
           </Box>
         </Toolbar>

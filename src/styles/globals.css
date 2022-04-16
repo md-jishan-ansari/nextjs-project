@@ -99,11 +99,13 @@ a {
 /* .secondDiscription { */
 .serviceDiscription {
   font-size: 48px;
+  line-height: 1.4;
+  margin-top: 30px;
 }
 
 .dash {
   display: inline-block;
-  width: 25px;
+  width: 30px;
   margin: 10px 20px;
   border: none;
   height: 3px;
