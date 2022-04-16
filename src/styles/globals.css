@@ -20,6 +20,16 @@ a {
   box-sizing: border-box;
 }
 
+.MuiInputLabel-root {
+  color: #6d7072 !important;
+  font-size: 30px !important;
+  font-weight: normal !important;
+}
+
+.MuiInputLabel-root.Mui-focused {
+  font-size: 20px !important;
+}
+
 .hover-underline-animation {
   display: inline-block;
   position: relative;
@@ -45,6 +55,11 @@ a {
 
 .underline-thin:after {
   height: 1px;
+  bottom: 4px;
+}
+
+.underline-active:after {
+  transform: scaleX(1);
 }
 
 .hover-underline-animation:hover:after {
@@ -72,7 +87,6 @@ a {
 .firstHeading {
   font-size: 112px;
   font-weight: normal;
-  font-family: 'Montserrat', sans-serif;
   margin: 0;
   line-height: 1.1;
 }

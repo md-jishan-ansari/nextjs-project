@@ -158,46 +158,55 @@ const Footer = () => {
               >
                 Social.
               </motion.p>
-              <motion.div
-                variants={fadeIn(showFooter, 0.2, 10)}
-                initial="initial"
-                animate="animate"
-                className={`hover-underline-animation underline-black underline-thin ${classes.itemText}`}
-              >
-                <Link href="#" scroll={false}>
-                  Facebook
-                </Link>
-              </motion.div>
-              <motion.div
-                variants={fadeIn(showFooter, 0.2, 10)}
-                initial="initial"
-                animate="animate"
-                className={`hover-underline-animation underline-black underline-thin ${classes.itemText}`}
-              >
-                <Link href="#" scroll={false}>
-                  LinkedIn
-                </Link>
-              </motion.div>
-              <motion.div
-                variants={fadeIn(showFooter, 0.2, 10)}
-                initial="initial"
-                animate="animate"
-                className={`hover-underline-animation underline-black underline-thin ${classes.itemText}`}
-              >
-                <Link href="#" scroll={false}>
-                  Instagram
-                </Link>
-              </motion.div>
-              <motion.div
-                variants={fadeIn(showFooter, 0.2, 10)}
-                initial="initial"
-                animate="animate"
-                className={`hover-underline-animation underline-black underline-thin ${classes.itemText}`}
-              >
-                <Link href="#" scroll={false}>
-                  awwwards.com
-                </Link>
-              </motion.div>
+
+              <div>
+                <motion.p
+                  variants={fadeIn(showFooter, 0.2, 10)}
+                  initial="initial"
+                  animate="animate"
+                  className={`hover-underline-animation underline-black underline-thin ${classes.itemText}`}
+                >
+                  <Link href="#" scroll={false}>
+                    Facebook
+                  </Link>
+                </motion.p>
+              </div>
+              <div>
+                <motion.p
+                  variants={fadeIn(showFooter, 0.2, 10)}
+                  initial="initial"
+                  animate="animate"
+                  className={`hover-underline-animation underline-black underline-thin ${classes.itemText}`}
+                >
+                  <Link href="#" scroll={false}>
+                    LinkedIn
+                  </Link>
+                </motion.p>
+              </div>
+              <div>
+                <motion.p
+                  variants={fadeIn(showFooter, 0.2, 10)}
+                  initial="initial"
+                  animate="animate"
+                  className={`hover-underline-animation underline-black underline-thin ${classes.itemText}`}
+                >
+                  <Link href="#" scroll={false}>
+                    Instagram
+                  </Link>
+                </motion.p>
+              </div>
+              <div>
+                <motion.p
+                  variants={fadeIn(showFooter, 0.2, 10)}
+                  initial="initial"
+                  animate="animate"
+                  className={`hover-underline-animation underline-black underline-thin ${classes.itemText}`}
+                >
+                  <Link href="#" scroll={false}>
+                    awwwards.com
+                  </Link>
+                </motion.p>
+              </div>
             </Grid>
           </Grid>
         </Grid>

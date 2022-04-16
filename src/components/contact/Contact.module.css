@@ -1,0 +1,37 @@
+.contactContainer {
+  position: relative;
+  background-color: #fcfcfc;
+  color: #040c26;
+  padding-top: 200px;
+}
+
+/* ********************************************* */
+
+.formContainer {
+  position: relative;
+  max-width: 550px;
+}
+
+.formContainer > * {
+  margin-bottom: 40px;
+}
+
+.submitButton {
+  position: absolute;
+  top: 24px;
+  left: 100%;
+  transform: translateX(-200px);
+
+  margin-top: 100px;
+  padding: 3px 40px !important;
+  border-radius: 0;
+  text-transform: unset !important;
+
+  color: #747474 !important;
+  border-color: #747474 !important;
+}
+
+.MuiInputLabel-root {
+  color: '#eee';
+  font-size: 30px !important;
+}

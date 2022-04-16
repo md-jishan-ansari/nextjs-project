@@ -20,7 +20,8 @@
 .itemText {
   color: #2e313a;
   font: 18px neue-haas-unica, sans-serif;
-  margin: 3px 0;
+  margin: 3px 0 0 0;
+  padding-bottom: 4px;
 }
 
 @media only screen and (max-width: 1200px) {

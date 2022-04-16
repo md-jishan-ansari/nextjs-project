@@ -1,7 +1,7 @@
 import { useContext, useEffect } from 'react';
 import AppContext from '../../AppContext';
 
-import classes from '../component.module.css';
+import classes from './Home.module.css';
 
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';

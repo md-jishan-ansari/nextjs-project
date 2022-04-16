@@ -13,6 +13,7 @@ import WorkTital from './WorkTital.jsx';
 
 const Work = () => {
   const [newWorks, setNewWorks] = useState(works);
+  const [underline, setUnderline] = useState(workTypes.all);
 
   const { setShowFooter } = useContext(AppContext);
 
@@ -22,8 +23,9 @@ const Work = () => {
     setShowFooter(!forFooterInView);
   }, [forFooterInView]);
 
-  const clickHandler = (key) => {
-    setNewWorks(works.filter((work) => work.type.includes(key)));
+  const clickHandler = (value) => {
+    setNewWorks(works.filter((work) => work.type.includes(value)));
+    setUnderline(value);
     console.log(newWorks);
   };
 
@@ -41,7 +43,14 @@ const Work = () => {
       <div>
         {Object.entries(workTypes).map(([key, value]) => (
           <Button onClick={() => clickHandler(value)} key={key} className={classes.btn}>
-            <span className="hover-underline-animation underline-thin">{value}</span>
+            <span
+              className={`hover-underline-animation underline-thin ${
+                value === underline && 'underline-active'
+              }`}
+            >
+              {value}
+            </span>
+            {/* <span className=>{value}</span> */}
           </Button>
         ))}
       </div>
