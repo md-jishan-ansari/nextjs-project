@@ -22,13 +22,13 @@ const Bottom = () => {
   }, [forFooterInView]);
 
   return (
-    <div ref={forFooterRef} className={classes.contentContainerBottom}>
+    <div className={classes.contentContainerBottom}>
       <motion.h4
         variants={fadeIn(showBottom, 0.4)}
         initial="initial"
         animate="animate"
         className="workHeading"
-        style={{ maxWidth: '800px' }}
+        style={{ postion: 'relative', maxWidth: '800px' }}
       >
         The secret of getting ahead <br />
         is to get started.
@@ -46,6 +46,13 @@ const Bottom = () => {
           <ArrowForwardIcon /> <span>Get In Touch Today</span>
         </motion.div>
       </Link>
+      <div
+        style={{
+          position: 'absolute',
+          bottom: 450,
+        }}
+        ref={forFooterRef}
+      ></div>
     </div>
   );
 };
