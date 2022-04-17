@@ -3,7 +3,6 @@ import AppContext from '../../AppContext';
 
 import classes from './Home.module.css';
 
-import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
 
 import { fadeIn } from '../variants.jsx';
@@ -12,14 +11,10 @@ import Link from 'next/link';
 
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
+import BottomView from '../BottomView.jsx';
+
 const Bottom = () => {
-  const { showBottom, setShowFooter } = useContext(AppContext);
-
-  const { ref: forFooterRef, inView: forFooterInView } = useInView({ threshold: 0.7 });
-
-  useEffect(() => {
-    setShowFooter(!forFooterInView);
-  }, [forFooterInView]);
+  const { showBottom } = useContext(AppContext);
 
   return (
     <div className={classes.contentContainerBottom}>
@@ -33,7 +28,7 @@ const Bottom = () => {
         The secret of getting ahead <br />
         is to get started.
       </motion.h4>
-      <Link href="#" passHref scroll={false}>
+      <Link href="./contact" passHref>
         <motion.div
           variants={fadeIn(showBottom, 0.1)}
           whileHover="whileHover"
@@ -46,13 +41,7 @@ const Bottom = () => {
           <ArrowForwardIcon /> <span>Get In Touch Today</span>
         </motion.div>
       </Link>
-      <div
-        style={{
-          position: 'absolute',
-          bottom: 450,
-        }}
-        ref={forFooterRef}
-      ></div>
+      <BottomView section="footer" />
     </div>
   );
 };

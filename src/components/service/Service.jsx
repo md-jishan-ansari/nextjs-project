@@ -1,6 +1,3 @@
-import { useContext, useEffect } from 'react';
-import AppContext from '../../AppContext';
-
 import classes from './Service.module.css';
 
 import Link from 'next/link';
@@ -9,23 +6,28 @@ import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../variants.jsx';
 
+import BottomView from '../BottomView.jsx';
+
 const Service = () => {
-  const { setShowBottom } = useContext(AppContext);
+  const { ref: headingRef, inView: headingInView } = useInView();
 
   const { ref: brandingRef, inView: brandingInView } = useInView();
   const { ref: designRef, inView: designInView } = useInView();
   const { ref: webRef, inView: webInView } = useInView();
   const { ref: digitalRef, inView: digitalInView } = useInView();
 
-  const { ref: forBottomRef, inView: forBottomInView } = useInView();
-
-  useEffect(() => {
-    setShowBottom(!forBottomInView);
-  }, [forBottomInView]);
-
   return (
     <div className="topContainer">
-      <h2 className={`firstHeading ${classes.serviceHeading}`}>Web Agency Services.</h2>
+      <div ref={headingRef}>
+        <motion.h2
+          variants={fadeIn(headingInView, 0.2, 33)}
+          initial="initial"
+          animate="animate"
+          className={`firstHeading ${classes.serviceHeading}`}
+        >
+          Web Agency Services.
+        </motion.h2>
+      </div>
       <p className="serviceDiscription">Experience matters</p>
 
       {/***********  branding ***********/}
@@ -144,12 +146,7 @@ const Service = () => {
         </a>
       </Link>
       <p ref={digitalRef} className="serviceDiscription">
-        <motion.sapn
-          ref={forBottomRef}
-          variants={fadeIn(digitalInView, 0.05, 5)}
-          initial="initial"
-          animate="animate"
-        >
+        <motion.sapn variants={fadeIn(digitalInView, 0.05, 5)} initial="initial" animate="animate">
           <Link href="#" scroll={false}>
             <a className="hover-underline-animation">Search Engine Optimisation</a>
           </Link>
@@ -174,6 +171,7 @@ const Service = () => {
         </motion.sapn>
         <hr className="dash" />{' '}
       </p>
+      <BottomView />
     </div>
   );
 };

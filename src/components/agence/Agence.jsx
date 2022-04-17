@@ -1,6 +1,3 @@
-import { useContext, useEffect } from 'react';
-import AppContext from '../../AppContext';
-
 import classes from './Agence.module.css';
 
 import { Grid } from '@mui/material';
@@ -14,6 +11,7 @@ import Link from 'next/link';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 import Bottom from '../home/Bottom.jsx';
+import BottomView from '../BottomView.jsx';
 
 const awards = [
   {
@@ -51,15 +49,8 @@ const awards = [
 ];
 
 const Agence = () => {
-  const { setShowBottom } = useContext(AppContext);
-
   const { ref: headingRef, inView: headingInView } = useInView();
   const { ref: discRef, inView: discInView } = useInView();
-  const { ref: forBottomRef, inView: forBottomInView } = useInView({ threshold: 0.6 });
-
-  useEffect(() => {
-    setShowBottom(!forBottomInView);
-  }, [forBottomInView]);
 
   return (
     <>
@@ -110,7 +101,7 @@ const Agence = () => {
             Wordpress, Laravel, Symfony, Magento and many more.{' '}
           </motion.p>
         </div>
-        <Link href="#" scroll={false}>
+        <Link href="./services" scroll={false}>
           <motion.div
             variants={fadeIn()}
             whileHover="whileHover"
@@ -123,13 +114,14 @@ const Agence = () => {
         <h4 style={{ fontWeight: 'normal', fontSize: 32 }}>Awards</h4>
         <Grid container spacing={8}>
           {awards.map((award) => (
-            <Grid ref={forBottomRef} key={award.id} item lg={3} sm={6} xs={12}>
+            <Grid key={award.id} item lg={3} sm={6} xs={12}>
               <img src="./image/003.jpg" width="100%" />
             </Grid>
           ))}
         </Grid>
+        <BottomView />
       </div>
-      {/* <span ref={forBottomRef}></span> */}
+
       <Bottom />
     </>
   );

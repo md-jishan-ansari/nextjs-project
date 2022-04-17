@@ -1,5 +1,4 @@
-import { useState, useContext, useEffect } from 'react';
-import AppContext from '../../AppContext';
+import { useState } from 'react';
 import { Button, Grid } from '@mui/material';
 
 import { ArrowForward } from '@mui/icons-material';
@@ -13,6 +12,8 @@ import Input from './Input.jsx';
 
 import classes from './Contact.module.css';
 
+import BottomView from '../BottomView.jsx';
+
 const initialData = {
   name: '',
   email: '',
@@ -21,15 +22,9 @@ const initialData = {
 };
 
 const Contact = () => {
-  const { setShowFooter } = useContext(AppContext);
-
-  const { ref: forFooterRef, inView: forFooterInView } = useInView({ threshold: 0.7 });
+  const { ref: contactRef, inView: contactInView } = useInView();
 
   const [userData, setUserData] = useState(initialData);
-
-  useEffect(() => {
-    setShowFooter(!forFooterInView);
-  }, [forFooterInView]);
 
   const ChangeHandler = (e) => {
     setUserData({ ...userData, [e.target.name]: e.target.value });
@@ -42,10 +37,16 @@ const Contact = () => {
   };
 
   return (
-    <div container className={`topContainer ${classes.contactContainer}`}>
-      <h4 className="firstHeading" style={{ marginBottom: 100 }}>
+    <div ref={contactRef} container className={`topContainer ${classes.contactContainer}`}>
+      <motion.h4
+        variants={fadeIn(contactInView, 0.2, 33)}
+        initial="initial"
+        animate="animate"
+        className="firstHeading"
+        style={{ marginBottom: 100 }}
+      >
         Contact.
-      </h4>
+      </motion.h4>
 
       <form onSubmit={submitHandler} className={classes.formContainer}>
         <div>
@@ -96,13 +97,7 @@ const Contact = () => {
           </motion.div>
         </Button>
       </form>
-      <div
-        style={{
-          position: 'absolute',
-          bottom: 450,
-        }}
-        ref={forFooterRef}
-      ></div>
+      <BottomView section="footer" />
     </div>
   );
 };

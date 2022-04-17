@@ -1,0 +1,38 @@
+.blogContainer {
+  padding-top: 170px;
+}
+
+.btn {
+  color: #fff !important;
+  font-size: 24px !important;
+  margin: 0 !important;
+  padding: 0px 40px 0 0 !important;
+  text-transform: unset !important;
+}
+
+.blogImage > img {
+  width: 100%;
+}
+
+.blogSubContainer {
+  padding: 20px;
+}
+
+.paginateContainer {
+  background-color: #040c26 !important;
+}
+
+.paginate {
+  max-width: 600px;
+  margin-top: 100px;
+  margin: 100px auto 0 auto;
+  color: #747474 !important;
+}
+
+.paginate > * {
+  justify-content: space-between;
+}
+
+.paginateItem {
+  color: #fff !important;
+}

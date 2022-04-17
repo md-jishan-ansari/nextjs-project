@@ -1,8 +1,3 @@
-import { useContext, useEffect } from 'react';
-import AppContext from '../../AppContext';
-
-import { useInView } from 'react-intersection-observer';
-
 import { motion } from 'framer-motion';
 import { moreLinkAnimation } from '../variants.jsx';
 
@@ -15,6 +10,8 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+
+import BottomView from '../BottomView.jsx';
 
 const blogs = [
   {
@@ -89,16 +86,8 @@ const responsive = {
 };
 
 const Blog = () => {
-  const { ref, inView } = useInView({ threshold: 0.4 });
-
-  const { showFooter, setShowFooter } = useContext(AppContext);
-
-  useEffect(() => {
-    setShowFooter(!inView);
-  }, [inView]);
-
   return (
-    <div ref={ref} className={classes.blogContainer} style={{ paddingRight: 0 }}>
+    <div className={classes.blogContainer} style={{ paddingRight: 0 }}>
       <Grid container className="topContainer" style={{ paddingBottom: 15 }}>
         <Grid item lg={9} sm={6} xs={12}>
           <p>Stay Tuned.</p>
@@ -151,6 +140,7 @@ const Blog = () => {
           </Link>
         ))}
       </Carousel>
+      <BottomView section="footer" />
     </div>
   );
 };

@@ -1,6 +1,3 @@
-import { useContext, useEffect } from 'react';
-import AppContext from '../../AppContext';
-
 import classes from './Home.module.css';
 
 import { useInView } from 'react-intersection-observer';
@@ -12,9 +9,9 @@ import Link from 'next/link';
 
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
-const HomeContent = () => {
-  const { setShowBottom } = useContext(AppContext);
+import BottomView from '../BottomView.jsx';
 
+const HomeContent = () => {
   const { ref: firstDiscRef, inView: firstDescInView } = useInView({
     threshold: 0.1,
   });
@@ -25,10 +22,6 @@ const HomeContent = () => {
   const { ref: UltimaRef, inView: UltimaInView } = useInView();
   const { ref: RéserveRef, inView: RéserveInView } = useInView();
   const { ref: HotelRef, inView: HotelInView } = useInView();
-
-  useEffect(() => {
-    setShowBottom(!UltimaInView);
-  }, [UltimaInView]);
 
   return (
     <div className={classes.contentContainer}>
@@ -63,7 +56,7 @@ const HomeContent = () => {
           We develop using Drupal 8&9, Laravel, Symfony, Concrete5 & Wordpress.
         </motion.p>
       </div>
-      <Link href="#" scroll={false}>
+      <Link href="./agence" passHref>
         <motion.div
           variants={moreLinkAnimation()}
           whileHover="whileHover"
@@ -116,7 +109,7 @@ const HomeContent = () => {
         </motion.sapn>
         <hr className="dash" />
       </p>
-      <Link href="#" scroll={false}>
+      <Link href="./services" passHref>
         <motion.div
           variants={moreLinkAnimation()}
           whileHover="whileHover"
@@ -189,7 +182,7 @@ const HomeContent = () => {
           </motion.h4>
         </div>
       </div>
-      <Link href="#" scroll={false}>
+      <Link href="./work" passHref>
         <motion.div
           variants={moreLinkAnimation()}
           whileHover="whileHover"
@@ -199,6 +192,7 @@ const HomeContent = () => {
           <ArrowForwardIcon /> <span>Discover more</span>
         </motion.div>
       </Link>
+      <BottomView />
     </div>
   );
 };

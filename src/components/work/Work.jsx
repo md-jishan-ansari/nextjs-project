@@ -1,7 +1,4 @@
-import { useState, useContext, useEffect } from 'react';
-import AppContext from '../../AppContext.jsx';
-
-import { useInView } from 'react-intersection-observer';
+import { useState } from 'react';
 
 import classes from './Work.module.css';
 
@@ -11,21 +8,16 @@ import { works, workTypes } from './workData.jsx';
 
 import WorkTital from './WorkTital.jsx';
 
+import BottomView from '../BottomView.jsx';
+
 const Work = () => {
   const [newWorks, setNewWorks] = useState(works);
   const [underline, setUnderline] = useState(workTypes.all);
 
-  const { setShowFooter } = useContext(AppContext);
-
-  const { ref: forFooterRef, inView: forFooterInView } = useInView();
-
-  useEffect(() => {
-    setShowFooter(!forFooterInView);
-  }, [forFooterInView]);
-
   const clickHandler = (value) => {
     setNewWorks(works.filter((work) => work.type.includes(value)));
     setUnderline(value);
+    console.log(value, underline);
     console.log(newWorks);
   };
 
@@ -66,13 +58,7 @@ const Work = () => {
           </>
         ))}
       </div>
-      <div
-        style={{
-          position: 'absolute',
-          bottom: 450,
-        }}
-        ref={forFooterRef}
-      ></div>
+      <BottomView section="footer" />
     </div>
   );
 };

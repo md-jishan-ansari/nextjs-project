@@ -33,7 +33,9 @@ const Navbar = () => {
     <AppBar color="transparent" elevation={1}>
       <Container maxWidth="xl">
         <Toolbar disableGutters style={{ height: 100 }}>
-          <Box className={classes.logo}>EW</Box>
+          <Link href="./" passHref>
+            <Box className={classes.logo}>EW</Box>
+          </Link>
           <Box className={classes.navbarItem} sx={{ display: { xs: 'none', sm: 'flex' } }}>
             <Link href="./agence" passHref>
               <Button className={classes.btn}>
@@ -48,6 +50,11 @@ const Navbar = () => {
             <Link href="./work" passHref>
               <Button className={classes.btn}>
                 <span className="hover-underline-animation underline-thin">Work</span>
+              </Button>
+            </Link>
+            <Link href="./blog" passHref>
+              <Button className={classes.btn}>
+                <span className="hover-underline-animation underline-thin">Blog</span>
               </Button>
             </Link>
             <Link href="./contact" passHref>
@@ -101,7 +108,15 @@ const Navbar = () => {
                 </MenuItem>
               </Link>
 
-              <Link href="./work" passHref scroll={false}>
+              <Link href="./blog" passHref scroll={false}>
+                <MenuItem onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center" style={{ color: '#555555' }}>
+                    Blog
+                  </Typography>
+                </MenuItem>
+              </Link>
+
+              <Link href="./contact" passHref scroll={false}>
                 <MenuItem onClick={handleCloseNavMenu}>
                   <Typography textAlign="center" style={{ color: '#555555' }}>
                     Contact
